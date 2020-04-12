@@ -31,10 +31,10 @@ class HardwareUsage(object):
         return self.__disk
 
     def __obj_to_dic(self, obj):
-        ket_tuple = ('total', 'used', 'percent', 'free', 'available')
+        key_tuple = ('total', 'used', 'percent', 'free', 'available')
         tmp = dict()
         for key in dir(obj):
-            if key.startswith(ket_tuple):
+            if key.startswith(key_tuple):
                 tmp[key] = getattr(obj, key)
         return tmp
 
